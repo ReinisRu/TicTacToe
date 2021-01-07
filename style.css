@@ -1,0 +1,86 @@
+:root {
+  --grey: #3e4444;
+  --green: #82b74b;
+  --olive: #405d27;
+  --brown: #c1946a;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--grey);
+  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.container {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#board {
+  width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.cell {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 100px;
+  /* background-color: var(--olive); */
+}
+
+#cell-0,
+#cell-1,
+#cell-2,
+#cell-3,
+#cell-4,
+#cell-5 {
+  border-bottom: 3px solid white;
+}
+#cell-0,
+#cell-1,
+#cell-3,
+#cell-4,
+#cell-6,
+#cell-7 {
+  border-right: 3px solid white;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--green);
+  border-color: var(--green);
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px;
+  transition: 200ms transform;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
