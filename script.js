@@ -10,12 +10,10 @@ for (let i = 0; i <= 8; i++) {
   let element = document.createElement(`div`);
   element.classList.add(`cell`);
   element.id = `cell-${i}`;
-  console.log(i);
   board.append(element);
 }
 
 const cells = Array.from(document.querySelectorAll(`.cell`));
-console.log(cells);
 
 const cellClicked = function (e) {
   let cellText = e.target.value;
