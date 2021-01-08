@@ -14,7 +14,7 @@ let message = document.getElementById(`message`);
 let board = document.querySelector(`#board`);
 for (let i = 0; i <= 8; i++) {
   let element = document.createElement(`div`);
-  element.classList.add("cell");
+  element.classList.add(`cell`);
   element.id = `cell-${i}`;
   console.log(i);
   board.append(element);
@@ -28,15 +28,73 @@ const cellClicked = function (e) {
   if (!cells[id]) {
     cells[id] = currentPlayer;
     e.target.innerText = currentPlayer;
-    // if (playerWon()) {
-    //   message.innerText = `${currentPlayer} won the game!`;
-    //   return;
-    // }
+    console.log(cells[id]);
+    if (playerWon()) {
+      message.innerText = `${currentPlayer} won the game!`;
+      return;
+    }
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
   }
 };
 
 cells.forEach((cell) => cell.addEventListener(`click`, cellClicked));
 
-console.log(spaces);
-console.log(message.innerText);
+const playerWon = function () {
+  if (
+    cells[0].innerText === currentPlayer &&
+    cells[1].innerText === currentPlayer &&
+    cells[2].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[3].innerText === currentPlayer &&
+    cells[4].innerText === currentPlayer &&
+    cells[5].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[6].innerText === currentPlayer &&
+    cells[7].innerText === currentPlayer &&
+    cells[8].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[0].innerText === currentPlayer &&
+    cells[3].innerText === currentPlayer &&
+    cells[6].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[1].innerText === currentPlayer &&
+    cells[4].innerText === currentPlayer &&
+    cells[7].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[2].innerText === currentPlayer &&
+    cells[5].innerText === currentPlayer &&
+    cells[8].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[0].innerText === currentPlayer &&
+    cells[4].innerText === currentPlayer &&
+    cells[8].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  } else if (
+    cells[2].innerText === currentPlayer &&
+    cells[4].innerText === currentPlayer &&
+    cells[6].innerText === currentPlayer
+  ) {
+    console.log(`${currentPlayer} won`);
+    return true;
+  }
+};
