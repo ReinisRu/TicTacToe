@@ -8,6 +8,7 @@
 /// ----------------
 const playerOne = `X`;
 const playerTwo = `O`;
+const btnRestart = document.getElementById(`btnRestart`);
 let currentPlayer = playerOne;
 let message = document.getElementById(`message`);
 
@@ -37,7 +38,11 @@ const cellClicked = function (e) {
   }
 };
 
-cells.forEach((cell) => cell.addEventListener(`click`, cellClicked));
+const restartGame = function () {
+  cells.forEach((cell) => cell.addEventListener(`click`, cellClicked));
+};
+
+restartGame();
 
 const playerWon = function () {
   if (
@@ -45,56 +50,57 @@ const playerWon = function () {
     cells[1].innerText === currentPlayer &&
     cells[2].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[3].innerText === currentPlayer &&
     cells[4].innerText === currentPlayer &&
     cells[5].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[6].innerText === currentPlayer &&
     cells[7].innerText === currentPlayer &&
     cells[8].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[0].innerText === currentPlayer &&
     cells[3].innerText === currentPlayer &&
     cells[6].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[1].innerText === currentPlayer &&
     cells[4].innerText === currentPlayer &&
     cells[7].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[2].innerText === currentPlayer &&
     cells[5].innerText === currentPlayer &&
     cells[8].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[0].innerText === currentPlayer &&
     cells[4].innerText === currentPlayer &&
     cells[8].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   } else if (
     cells[2].innerText === currentPlayer &&
     cells[4].innerText === currentPlayer &&
     cells[6].innerText === currentPlayer
   ) {
-    console.log(`${currentPlayer} won`);
     return true;
   }
 };
+
+btnRestart.addEventListener(`click`, function () {
+  cells.forEach((cell) => {
+    cell.innerText = ``;
+  });
+  message.innerText = `Play a game`;
+  currentPlayer = playerOne;
+  restartGame();
+});

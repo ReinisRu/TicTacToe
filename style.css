@@ -21,11 +21,11 @@ body {
 h1 {
   font-weight: 300;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .container {
-  padding: 20px;
+  padding: 10px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -34,15 +34,15 @@ h1 {
 }
 
 #board {
-  width: 360px;
+  width: 330px;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .cell {
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
