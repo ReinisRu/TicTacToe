@@ -7,7 +7,7 @@
 // }
 /// ----------------
 const playerOne = `X`;
-const playerTwo = `0`;
+const playerTwo = `O`;
 let currentPlayer = playerOne;
 let message = document.getElementById(`message`);
 
@@ -28,10 +28,10 @@ const cellClicked = function (e) {
   if (!cells[id]) {
     cells[id] = currentPlayer;
     e.target.innerText = currentPlayer;
-    if (playerWon()) {
-      message.innerText = `${currentPlayer} won the game!`;
-      return;
-    }
+    // if (playerWon()) {
+    //   message.innerText = `${currentPlayer} won the game!`;
+    //   return;
+    // }
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
   }
 };
